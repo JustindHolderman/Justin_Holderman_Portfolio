@@ -1,5 +1,6 @@
-export default function Portfolio() {
+import React from 'react';
 
+export default function Portfolio() {
     const applications = [
         {
             name: "Text Editor PWA",
@@ -19,5 +20,20 @@ export default function Portfolio() {
             description: "A kanban board for task management.",
             repo: "https://github.com/JustindHolderman/kanban",
         },
-    ]
+    ];
+
+    const Cards = applications.map((app, i) => (
+        <div key={i} className="card">
+            <h3>{app.name}</h3>
+            <p>{app.description}</p>
+            <a href={app.url} target="_blank" rel="noreferrer">View Application</a>
+            <a href={app.repo} target="_blank" rel="noreferrer">View Repository</a>
+        </div>
+    ));
+
+    return (
+        <div className="portfolio">
+            {Cards}
+        </div>
+    );
 }
