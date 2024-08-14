@@ -1,4 +1,4 @@
-import AboutMe from '../components/About.jsx'
+import About from '../components/About.jsx'
 
 export default function Homepage() {
     
